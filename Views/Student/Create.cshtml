@@ -1,0 +1,47 @@
+﻿@model Tp3_MVC.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Student</h1>
+
+<h4 class="my-3">New Student Informations</h4>
+<hr />
+<div class="row mx-auto my-3">
+    <div class="col-md-12 text-right">
+        <a asp-action="Index">
+            <i class="fa fa-arrow-left"></i>
+            Back to List
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="fullName" class="control-label"></label>
+                <input asp-for="fullName" class="form-control" />
+                <span asp-validation-for="fullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="old" class="control-label"></label>
+                <input asp-for="old" class="form-control" />
+                <span asp-validation-for="old" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fa fa-check-square"></i> Create
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

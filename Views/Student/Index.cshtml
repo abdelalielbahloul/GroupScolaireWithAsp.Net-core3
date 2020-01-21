@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Tp3_MVC.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Students</h1>
+
+<div class="row my-4">
+    <div class="col-md-12 text-right">
+        <a role="button" class="btn btn-outline-primary" asp-action="Create"><i class="fa fa-plus"></i> Create New</a>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.old)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.old)
+                    </td>
+                    <td>
+                        <a role="button" class="btn btn-warning mr-3" asp-action="Edit" asp-route-id="@item.codeStudent">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        @*<a asp-action="Details" asp-route-id="@item.codeStudent">Details</a> |*@
+                        <a role="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.codeStudent">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3" class="text-center">No student yet</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
