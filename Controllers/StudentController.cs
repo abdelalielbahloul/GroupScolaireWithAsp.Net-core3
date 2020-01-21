@@ -54,7 +54,7 @@ namespace Tp3_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("codeStudent,fullName,old")] Student student)
+        public async Task<IActionResult> Create([Bind("codeStudent,firstName,lastName,old")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Tp3_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("codeStudent,fullName,old")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("codeStudent,firstName,lastName,old")] Student student)
         {
             if (id != student.codeStudent)
             {

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tp3_MVC.ModelsContext;
 
 namespace Tp3_MVC.Migrations
 {
     [DbContext(typeof(GroupDbContext))]
-    partial class GroupDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200121110053_secondMigrationAddingfieldsToStudentClass")]
+    partial class secondMigrationAddingfieldsToStudentClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -14,13 +14,17 @@ namespace Tp3_MVC.Models
         [Column("codeStudent", TypeName="int")]
         [Required]
         public int codeStudent { get; set; }
-        [Column("fullName", TypeName = "VARCHAR(30)")]
+        [Column("firstName", TypeName = "VARCHAR(30)")]
         [Required(ErrorMessage ="This field is required")]
-        [DisplayName("Full Name")]
-        public string fullName { get; set; }
+        [DisplayName("First Name")]
+        public string firstName { get; set; }
+        [Column("lastName", TypeName = "VARCHAR(30)")]
+        [Required(ErrorMessage = "This field is required")]
+        [DisplayName("Last Name")]
+        public string lastName { get; set; }
         [Column("old", TypeName = "int")]
         [Required(ErrorMessage = "This field is required")]
-        [DisplayName("Student's old")]
+        [DisplayName("old")]
         public int old { get; set; }
     }
 }

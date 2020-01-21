@@ -15,12 +15,15 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.fullName)
+                @Html.DisplayNameFor(model => model.firstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.old)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -28,23 +31,26 @@
         {
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fullName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.old)
-                    </td>
-                    <td>
-                        <a role="button" class="btn btn-warning mr-3" asp-action="Edit" asp-route-id="@item.codeStudent">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        @*<a asp-action="Details" asp-route-id="@item.codeStudent">Details</a> |*@
-                        <a role="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.codeStudent">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.old)
+            </td>
+            <td>
+                <a role="button" class="btn btn-warning mr-3" asp-action="Edit" asp-route-id="@item.codeStudent">
+                    <i class="fa fa-edit"></i>
+                </a>
+                @*<a asp-action="Details" asp-route-id="@item.codeStudent">Details</a> |*@
+                <a role="button" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.codeStudent">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
             }
         }
         else
