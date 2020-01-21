@@ -26,7 +26,7 @@ namespace Tp3_MVC
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddDbContext<GroupDbContext>(options => 
+            services.AddDbContext<GroupDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection"))
             );
         }

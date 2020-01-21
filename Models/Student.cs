@@ -14,7 +14,7 @@ namespace Tp3_MVC.Models
         [Column("codeStudent", TypeName="int")]
         [Required]
         public int codeStudent { get; set; }
-        [Column("codeStudent", TypeName = "VARCHAR(30)")]
+        [Column("fullName", TypeName = "VARCHAR(30)")]
         [Required(ErrorMessage ="This field is required")]
         [DisplayName("Full Name")]
         public string fullName { get; set; }
