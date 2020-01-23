@@ -31,6 +31,9 @@ namespace Tp3_MVC
             services.AddDbContext<GroupDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection"))
             );
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DevConnection"))
+            );
             services.AddIdentity<IdentityUser, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();
         }

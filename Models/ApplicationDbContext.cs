@@ -16,9 +16,7 @@ namespace Tp3_MVC.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Student>()
-                .HasIndex(key => key.codeStudent)
-                .IsUnique();
+            
         }
 
 
